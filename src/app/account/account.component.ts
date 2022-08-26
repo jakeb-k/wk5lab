@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
+  imageSrc = 'assets/tatreference2.PNG'; 
   email = "";
   password = "";
 
