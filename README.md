@@ -29,3 +29,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## NPM Packages
+
+use `npm install express`
+
+## GIT COMMANDS
+
+git remote add origin https://github.com/jakeb-k/week4-3813.git
+git branch -M main
+git push -u origin main
