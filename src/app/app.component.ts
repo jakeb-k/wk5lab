@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {HttpClientModule} from '@angular/common/http'; 
+import { LoginServiceService } from './login-service.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,10 +10,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'week4tut';
 
-  constructor(private router:Router) {}
+  constructor(private router:Router, private service: LoginServiceService) {}
 
   ngOnInit() {
-
   }
 
   navbyurl(id:number) {

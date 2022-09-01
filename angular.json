@@ -67,7 +67,8 @@
               "browserTarget": "week4tut:build:production"
             },
             "development": {
-              "browserTarget": "week4tut:build:development"
+              "browserTarget": "week4tut:build:development",
+              "proxyConfig" : "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

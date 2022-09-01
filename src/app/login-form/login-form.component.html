@@ -1,6 +1,6 @@
 
 <div class="container">
-    <form>
+    <form method="post" action="api/auth">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="text" [(ngModel)] = "useremail" name="email" class="form-control" id="exampleInputEmail1"
@@ -10,6 +10,6 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" [(ngModel)] = "userpassword" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <button type="submit" (click)= "checkDetails(loginDetails.email, loginDetails.password)" class="btn btn-primary">Submit</button>
+        <button type="submit" (click)= "sendDataFromApi()" class="btn btn-primary">Submit</button>
     </form>
 </div>
