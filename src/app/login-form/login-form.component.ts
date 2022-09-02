@@ -17,24 +17,43 @@ import { LoginServiceService } from '../login-service.service';
 export class LoginFormComponent implements OnInit {
     useremail = String("") ;  
     userpassword = String("");
-    userDetails = {
-      "email":this.useremail,
-      "password":this.userpassword
-    }; 
+    username = String("");
+    userbirthdate = String("");
+    userage = Number(); 
+    
    
-    sendit = JSON.stringify(this.userDetails); 
 
   constructor( private route:ActivatedRoute, private router:Router, private http:HttpClient, private service: LoginServiceService) { }
 
   ngOnInit(): void {
   }
-  
+  userDetails = {
+      "username": "",
+      "email": "",
+      "password":"",
+      "age": 0,
+      "birthdate": "", 
+    }; 
   sendDataFromApi() {
-  
+    this.userDetails.email = this.useremail; 
+    this.userDetails.password = this.userpassword;
+    this.userDetails.username = this.username;
+    this.userDetails.age = this.userage;  
+    this.userDetails.birthdate = this.userbirthdate; 
     this.service.sendData(this.userDetails).subscribe((response)=>{
       console.log('Reponse from API is ', response)
+      if(response == true) {
+        this.navby(); 
+        sessionStorage.setItem('username', this.userDetails.username);
+        sessionStorage.setItem('email', this.userDetails.email);
+        sessionStorage.setItem('age', this.userDetails.age.toString());
+        sessionStorage.setItem('birthdate', this.userDetails.birthdate);
+      }
     }, (error)=>{
       console.log("Error is ", error)
     }); 
+  }
+  navby() {
+    this.router.navigate(['/account/']); 
   }
 }

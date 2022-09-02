@@ -1,2 +1,40 @@
-<h1>Accounts Page</h1>
-<img src = {{imageSrc}} /> 
+<div class = "container">
+            <h1>Accounts Page</h1>
+        
+            <img src = {{imageSrc}} /> 
+        
+            <p> {{name}} </p>
+        
+            <p> {{email}}</p>
+       
+            <p> {{age}} </p>
+       
+            <p> {{birthdate}}</p>
+            <button type="submit" (click)= "navhome()">Log Out</button>
+            <h1>Edit Details</h1>
+            <form method="post" action="api/auth">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="text" [(ngModel)]= "useremail" name="useremail" class="form-control" id="exampleInputEmail1"
+                        placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" [(ngModel)]= "username" name="username" class="form-control" id="inputUsername"
+                        placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                    <label for="inputBirthdate">Birth date</label>
+                    <input type="text" [(ngModel)]= "userbirthdate" name="userbirthdate" class="form-control" id="inputBirthdate"
+                        placeholder="Enter day of birth (dd/mm/yy)">
+                </div>
+                <div class="form-group">
+                    <label for="inputAge">Age</label>
+                    <input type="number" [(ngModel)]= "userage" name="userage" class="form-control" id="inputAge"
+                        placeholder="Enter age">
+                </div>
+                <button type="submit" (click)= "changeSessionData()" class="btn btn-primary">Submit</button>
+            </form>
+        
+
+</div>

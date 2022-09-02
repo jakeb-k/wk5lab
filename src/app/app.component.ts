@@ -22,4 +22,8 @@ export class AppComponent {
   navby(id:number) {
     this.router.navigate(['/login/',id]); 
   }
+  navhome() {
+    sessionStorage.clear(); 
+    this.router.navigate(['//']); 
+  }
 }
